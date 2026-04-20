@@ -116,6 +116,17 @@ p {
   gap: 0.65rem;
 }
 
+.two-column-section > * {
+  min-width: 0;
+}
+
+.media-card,
+.video-card,
+.grid-item,
+.column {
+  min-width: 0;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -481,12 +492,17 @@ body .abstract-points li {
   overflow: hidden;
   border: 1px solid var(--border);
   background: #0d1723;
+  width: 100%;
+  min-width: 0;
 }
 
 .video-frame video {
-  width: 100%;
   display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   max-height: 320px;
+  object-fit: contain;
 }
 
 .demo-embed {
