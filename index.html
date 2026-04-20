@@ -223,11 +223,13 @@
       <div class="container split">
         <article class="card reveal">
           <h2>Interactive Demo</h2>
-          <video controls preload="metadata">
-  <source src="assets/video/demo_video.mp4" type="video/mp4">
-</video>
-          <p>Try the interactive demo to explore narrative sections, extraction outputs, and alignment behavior.
-          <a class="btn btn--primary" href="https://cpulido-nde-narratives-analysis.hf.space/" target="_blank" rel="noopener noreferrer">Open Demo in New Tab</a></p>
+          <div class="video-frame">
+            <video controls preload="metadata" autoplay muted loop>
+              <source src="assets/video/demo_video.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p>Try the interactive demo to explore narrative sections, extraction outputs, and alignment behavior.</p>
+          <a class="btn btn--primary" href="https://cpulido-nde-narratives-analysis.hf.space/" target="_blank" rel="noopener noreferrer">Open Demo in New Tab</a>
         </article>
 
         <article class="card reveal">
@@ -298,7 +300,6 @@
     </section>
   </main>
 
-  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.49.1/gradio.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
