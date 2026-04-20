@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quantifying representational mismatch between narratives and structured reports in near-death experiences</title>
+  <meta name="description" content="Project page for a scientific study on representational mismatch between NDE narratives and questionnaires, including key findings, method pipeline, and interactive demo.">
+  <link rel="canonical" href="https://cristian-pulido.github.io/nde-narratives-paper-site/">
+  <meta property="og:title" content="Quantifying representational mismatch in near-death experience reports">
+  <meta property="og:description" content="A visual paper page with key findings, qualitative examples, and interactive demo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cristian-pulido.github.io/nde-narratives-paper-site/">
+  <meta property="og:image" content="assets/figures/questionnaire_family_tradeoff_map.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero section">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container">
+      <h1>Quantifying representational mismatch between narratives and structured reports in near-death experiences</h1>
+      <p class="subtitle">Narratives and questionnaires do not describe the same experience in the same way.</p>
+      <p class="authors"><a href="https://cristian-pulido.github.io/" target="_blank" rel="noopener noreferrer">Cristian Pulido</a> · Francisco Gómez · Prejaas K.B. Tewarie · Roxane S. Hoyer · Steven Laureys</p>
+      <div class="button-row">
+        <a class="btn btn--primary" href="#" aria-label="Paper link placeholder">Paper (Soon)</a>
+        <a class="btn" href="https://github.com/cristian-pulido/NDE_NARRATIVES_ANALYSIS" target="_blank" rel="noopener noreferrer">Code</a>
+        <a class="btn" href="https://cpulido-nde-narratives-analysis.hf.space/" target="_blank" rel="noopener noreferrer">Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="top-nav" aria-label="Section navigation" role="navigation">
+    <div class="container top-nav__inner">
+      <button class="nav-pill" type="button" data-target="problem">Problem</button>
+      <button class="nav-pill" type="button" data-target="pipeline">Method</button>
+      <button class="nav-pill" type="button" data-target="results">Results</button>
+      <button class="nav-pill" type="button" data-target="demo">Media</button>
+      <button class="nav-pill" type="button" data-target="authors">Authors</button>
+      <button class="nav-pill" type="button" data-target="citation">Citation</button>
+    </div>
+  </div>
+
+  <main>
+    <section class="section" id="problem">
+      <div class="container card reveal problem-block">
+        <h2>The Problem</h2>
+        <p class="qualitative-intro">Two valid views of the same NDE can diverge: narratives preserve local events and ambiguity, while questionnaires provide global retrospective summaries.</p>
+
+        <div class="problem-grid">
+          <article class="quote-card">
+            <p class="quote-label">Core Idea</p>
+            <ul class="idea-list idea-list--compact">
+              <li>Narratives preserve temporal and local signals, including ambiguity and distress.</li>
+              <li>Questionnaires compress experience into standardized global categories.</li>
+              <li>Both are informative, but they are not equivalent representations.</li>
+              <li>The contribution is to measure this mismatch as a structured pattern.</li>
+            </ul>
+          </article>
+          <article class="quote-card">
+            <p class="quote-label">Abstract</p>
+            <ul class="abstract-points">
+              <li>Alignment is partial: experiential NDE-C is more recoverable than reflective NDE-MCQ.</li>
+              <li>Narrative tone is informative, but not a reliable proxy for global self-reported valence.</li>
+              <li>Strong benchmark performance supports a representational gap, not only model limitation.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="qualitative-grid problem-examples">
+          <article class="quote-card">
+            <p class="quote-label">Example 1 · Local worry</p>
+            <p class="quote-text">"It was very bright... I was worried because I wanted to go downstairs and wake up, but I couldn't."</p>
+            <p class="quote-note">A globally positive report can still include locally distressing narrative segments.</p>
+          </article>
+          <article class="quote-card">
+            <p class="quote-label">Example 2 · Ambiguous language</p>
+            <p class="quote-text">"monochrome beige fixed image, in an attic, mushroom and wooden case. Don't calm down."</p>
+            <p class="quote-note">Fragmented expression weakens alignment between text tone and questionnaire labels.</p>
+          </article>
+          <article class="quote-card">
+            <p class="quote-label">Example 3 · Muted expression</p>
+            <p class="quote-text">"No pain, no voice, no reaction, total nothing."</p>
+            <p class="quote-note">Low-affect wording can appear neutral despite a positive retrospective appraisal.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card reveal">
+        <h2>Glossary</h2>
+        <div class="resources-grid">
+          <p class="resource-link"><strong>NDE-C:</strong> phenomenological content features reported during the experience.</p>
+          <p class="resource-link"><strong>NDE-MCQ:</strong> reflective and moral-cognition after-effects after the event.</p>
+          <p class="resource-link"><strong>Macro F1:</strong> class-balanced metric that weights each class equally.</p>
+          <p class="resource-link"><strong>Cohen's kappa:</strong> agreement beyond chance between representations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pipeline">
+      <div class="container card reveal">
+        <h2>Pipeline / Method</h2>
+        <div class="pipeline">
+          <div class="step">
+            <span class="step__index">01</span>
+            <img src="assets/icons/narrative.svg" alt="Narrative input icon">
+            <h3>Narrative</h3>
+            <p>Sectioned first-person reports</p>
+          </div>
+          <div class="step">
+            <span class="step__index">02</span>
+            <img src="assets/icons/segmentation.svg" alt="Segmentation icon">
+            <h3>Segmentation</h3>
+            <p>Validate and reassign text blocks</p>
+          </div>
+          <div class="step">
+            <span class="step__index">03</span>
+            <img src="assets/icons/extraction.svg" alt="Extraction icon">
+            <h3>Extraction</h3>
+            <p>LLM and lexical signal parsing</p>
+          </div>
+          <div class="step">
+            <span class="step__index">04</span>
+            <img src="assets/icons/alignment.svg" alt="Alignment icon">
+            <h3>Alignment</h3>
+            <p>Compare against questionnaire labels</p>
+          </div>
+          <div class="step">
+            <span class="step__index">05</span>
+            <img src="assets/icons/interpretation.svg" alt="Interpretation icon">
+            <h3>Interpretation</h3>
+            <p>Quantify representational mismatch</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Key Results</h2>
+        </div>
+
+        <div class="takeaways reveal">
+          <article class="takeaway-card">
+            <p class="takeaway-card__value">149</p>
+            <p class="takeaway-card__label">Structured narratives analyzed</p>
+          </article>
+          <article class="takeaway-card">
+            <p class="takeaway-card__value">kappa ~0.37</p>
+            <p class="takeaway-card__label">NDE-C alignment region</p>
+          </article>
+          <article class="takeaway-card">
+            <p class="takeaway-card__value">kappa ~0.11</p>
+            <p class="takeaway-card__label">NDE-MCQ alignment region</p>
+          </article>
+        </div>
+
+        <div class="problem-grid notes-grid reveal">
+          <article class="quote-card">
+            <p class="quote-label">What Mismatch Is Not</p>
+            <ul class="abstract-points">
+              <li>It is not random noise.</li>
+              <li>It is not only model failure.</li>
+              <li>It does not invalidate narrative reports.</li>
+            </ul>
+          </article>
+          <article class="quote-card">
+            <p class="quote-label">Two Representational Layers</p>
+            <ul class="abstract-points">
+              <li><strong>Narrative layer:</strong> local episodes, sequence, ambiguity, mixed tone.</li>
+              <li><strong>Questionnaire layer:</strong> global summary, predefined options, retrospective appraisal.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="results-grid">
+          <article class="result-card reveal">
+            <img src="assets/figures/questionnaire_family_tradeoff_map.png" alt="Family-level agreement landscape with stronger NDE-C alignment and weaker NDE-MCQ alignment" loading="lazy">
+            <div class="result-card__body">
+              <h3>Family-Level Mismatch Pattern</h3>
+              <p>Alignment is not uniform: NDE-C features cluster high, tone is intermediate, and NDE-MCQ after-effects remain low.</p>
+              <p class="result-tip"><strong>How to read:</strong> upper-right means stronger alignment between text-derived outputs and questionnaire labels.</p>
+            </div>
+          </article>
+
+          <article class="result-card reveal">
+            <img src="assets/figures/questionnaire_extraction_item_scatter.png" alt="Item-level scatter where experiential features show higher agreement than reflective after-effects" loading="lazy">
+            <div class="result-card__body">
+              <h3>Concrete Features Are More Recoverable</h3>
+              <p>Perceptual experience items are extracted more reliably than reflective change items, indicating different linguistic recoverability.</p>
+              <p class="result-tip"><strong>How to read:</strong> circles trend higher than triangles, indicating stronger recoverability of phenomenological content.</p>
+            </div>
+          </article>
+
+          <article class="result-card reveal">
+            <img src="assets/figures/questionnaire_tone_confusion_matrix.png" alt="Confusion matrix showing most disagreement in mixed and neutral categories" loading="lazy">
+            <div class="result-card__body">
+              <h3>Tone Is Informative, But Not Equivalent to Valence</h3>
+              <p>Disagreement concentrates around mixed and neutral regions instead of direct positive-negative reversals.</p>
+              <p class="result-tip"><strong>How to read:</strong> disagreement clusters near ambiguous categories rather than polarity flips.</p>
+            </div>
+          </article>
+
+          <article class="result-card reveal">
+            <img src="assets/figures/benchmark_macro_f1_vs_kappa.png" alt="Benchmark chart showing stronger text-label alignment outside the NDE domain" loading="lazy">
+            <div class="result-card__body">
+              <h3>Benchmark Gap Supports the Main Claim</h3>
+              <p>Higher agreement on standard sentiment datasets shows the NDE gap is mainly representational, not just model failure.</p>
+              <p class="result-tip"><strong>How to read:</strong> benchmark points occupy higher agreement regions than NDE tone results.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="container split">
+        <article class="card reveal">
+          <h2>Interactive Demo</h2>
+          <video controls preload="metadata" autoplay muted playsinline loop src="https://raw.githubusercontent.com/cristian-pulido/NDE_NARRATIVES_ANALYSIS/main/demo_video.mov"></video>
+          <p>Try the interactive demo to explore narrative sections, extraction outputs, and alignment behavior.
+          <a class="btn btn--primary" href="https://cpulido-nde-narratives-analysis.hf.space/" target="_blank" rel="noopener noreferrer">Open Demo in New Tab</a></p>
+        </article>
+
+        <article class="card reveal">
+          <h2>Video Overview</h2>
+          
+          <div class="video-frame">
+            <video controls preload="metadata" src="https://raw.githubusercontent.com/cristian-pulido/NDE_NARRATIVES_ANALYSIS/main/Stories_vs_Surveys.mov"></video>
+          </div>
+          <p>A short visual summary of findings and framing.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="authors">
+      <div class="container card reveal">
+        <h2>Authors & Affiliations</h2>
+        <div class="affiliations-grid">
+          <article class="aff-card">
+            <h3>Authors</h3>
+            <ul>
+              <li><a href="https://cristian-pulido.github.io/" target="_blank" rel="noopener noreferrer">Cristian Pulido</a> <span class="aff-tags">(1, 2)</span></li>
+              <li>Francisco Gómez <span class="aff-tags">(1)</span></li>
+              <li>Prejaas K.B. Tewarie <span class="aff-tags">(2, 3)</span></li>
+              <li>Roxane S. Hoyer <span class="aff-tags">(2)</span></li>
+              <li>Steven Laureys <span class="aff-tags">(2, 4)</span></li>
+            </ul>
+          </article>
+
+          <article class="aff-card">
+            <h3>Institutions</h3>
+            <ol>
+              <li>Universidad Nacional de Colombia, Bogota, Colombia</li>
+              <li>Joint International Research Unit on Neuroplasticity, CERVO Brain Research Center, Universite Laval, Quebec City, Canada</li>
+              <li>Sir Peter Mansfield Imaging Center, School of Physics, University of Nottingham, Nottingham, United Kingdom</li>
+              <li>Coma Science Group, GIGA-Consciousness, University of Liege, Liege, Belgium</li>
+            </ol>
+          </article>
+        </div>
+        <p class="authors-note">Equal contribution: Roxane S. Hoyer and Steven Laureys.</p>
+      </div>
+    </section>
+
+    <section class="section" id="citation">
+      <div class="container card reveal citation-card">
+        <div class="citation-head">
+          <h3>BibTeX</h3>
+          <button class="btn" id="copy-bibtex" type="button">Copy BibTeX</button>
+        </div>
+        <pre class="bibtex" id="bibtex-block"><code>@article{pulido2026stories2structure,
+  title   = {Quantifying representational mismatch between narratives and structured reports in near-death experiences},
+  author  = {Pulido, Cristian and Gomez, Francisco and Tewarie, Prejaas K.B. and Hoyer, Roxane S. and Laureys, Steven},
+  journal = {Consciousness and Cognition},
+  year    = {2026},
+  note    = {Preprint / under review}
+}</code></pre>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container card reveal final-cta">
+        <h2>Quick Actions</h2>
+        <div class="button-row">
+          <a class="btn btn--primary" href="#" aria-label="Paper link placeholder">Read Paper (Soon)</a>
+          <a class="btn" href="https://cpulido-nde-narratives-analysis.hf.space/" target="_blank" rel="noopener noreferrer">Try Demo</a>
+          <a class="btn" href="#citation">Cite This Work</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/5.49.1/gradio.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
